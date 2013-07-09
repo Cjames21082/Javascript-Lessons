@@ -1,7 +1,7 @@
 // create a class through the constructor invocation pattern 
 // BookList = function() {}
 
-var BookList(){
+var BookList= function(){
 	/* properties of BookList
 	Number of books marked as read (eg, BookList.booksRead)
 	Number of books marked not read yet
@@ -13,9 +13,15 @@ var BookList(){
 
 	this.booksRead = 0;
 	this.bookstoRead = 0;
-	this.bookShelf = [];
+	
+	this.nextBook = function(){
+
+	};
+
 	this.currentBook = currentBook;
 	this.lastBookRead = lastBookRead;
+	this.bookShelf = [];
+	
 
 	this.add = function(libro){
 		this.bookShelf.push(libro);
@@ -26,13 +32,17 @@ var BookList(){
 	this.finishCurrentBook= function(libro){
 		
 	}
-
 }
 
-var Book = function(libro){
-	this.title
-	this.genre
-	this.author
+
+var Book = function(bookTitle, bookAuthor, bookGenre){
+	this.bookTitle = bookTitle;
+	this.bookAuthor = bookAuthor;
+	this.bookGenre = bookGenre;
 	this.read = false;
-	this.readDate = " ";
-}
+	this.readDate = null;
+};
+
+var pride = new Book("Pride and Prejudice","Libby", "Historical ROmance");
+
+
