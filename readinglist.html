@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <title> Cassie Booklist </title>
+
+        <!-- CSS Coding -->
+    <style>
+        h1{
+            text-align:center;
+             color:red;
+        }
+
+        img{
+
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1> My Book List!! </h1>
+
+    </body>
+
+    <script src="readingList.js"></script>
+    
+    <script>
+    console.log("Loaded all of my reading list!");
+    
+    var body = document.getElementsByTagName("body")[0];
+    var list = document.createElement("ul");
+    body.appendChild(list);
+
+    for (var i=0; i < cassieBooks.bookShelf.length; i++) {
+       
+        var book = cassieBooks.bookShelf[i];
+        console.log(book.bookTitle);
+        console.log(book.bookImage);
+        
+        var paragraph = document.createElement("p");
+        var bookPoint = document.createElement("li");
+        var image = document.createElement("img");
+
+        paragraph.innerHTML = "Title: " + book.bookTitle
+        image.src= book.bookImage; 
+        image.style.height = '100px';
+        image.style.width = '100px';
+        
+        list.appendChild(bookPoint).appendChild(image);
+        list.appendChild(paragraph);
+    }
+    /*
+    var myImg = document.getElementsByTagName("img");
+
+    for (var i=0; i < myImg.length; i++) {
+        
+        myImg.style.height = '80px';
+        myImg.style.width = '80px';
+    }
+    */
+    </script>
+       
+</html>
+
+
+

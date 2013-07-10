@@ -53,8 +53,8 @@ var BookList= function(){
 
 	this.finishCurrentBook= function(){
 		var finishBook = this.currentBook();
-		this.finishBook.read = true;
-		this.finishBook.readDate = new Date(dateString);
+		finishBook.read = true;
+		finishBook.readDate = new Date();
 		this.booksRead++;
 		this.booksToRead--;
 		return ;
@@ -62,22 +62,31 @@ var BookList= function(){
 };
 
 
-var Book = function(bookTitle, bookAuthor, bookGenre){
+var Book = function(bookTitle, bookAuthor, bookGenre, bookImage){
 	this.bookTitle = bookTitle;
 	this.bookAuthor = bookAuthor;
 	this.bookGenre = bookGenre;
 	this.read = false;
 	this.readDate = null;
+	this.bookImage = bookImage;
 };
 
+//new BookList
 var cassieBooks = new BookList();
 
+//Books
+var pride = new Book("Pride and Prejudice","Austen", "Historical Romance", "http://ecx.images-amazon.com/images/I/51EEPG81WVL.jpg");
+var toyStory = new Book("Toy Story", "Disney", "Family", "http://www.oncenter.org/sites/default/files/events/toy-story-buzz-and-woody-wallpaper-desktop-film-movie.jpg");
+var hungerGames = new Book ("Hunger Games", "Collins", "Young Adult", "http://latino-review.com/wp-content/uploads/2013/01/teaserposter-hungergames2.jpg");
+var mockingbird = new Book("To Kill a Mockingbird", "Lee", "Fiction", "http://www.visitfortwayne.com/blog/wp-content/uploads/2013/03/mockingbird.jpg");
+var animalFarm = new Book("Animal Farm", "Orwell","Fiction", "http://libraryaisles.files.wordpress.com/2013/05/animal-farm-book-cover.jpg");
 
-var pride = new Book("Pride and Prejudice","Libby", "Historical Romance");
-var toyStory = new Book("Toy Story", "Disney", "Family");
 
+//add books to Bookshelf
 cassieBooks.add(pride);
 cassieBooks.add(toyStory);
-
+cassieBooks.add(hungerGames);
+cassieBooks.add(mockingbird);
+cassieBooks.add(animalFarm);
 
 
